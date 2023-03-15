@@ -9,6 +9,9 @@ filepath = tf.keras.utils.get_file('shakespeare.txt', 'https://storage.googleapi
 
 text = open(filepath, 'rb').read().decode(encoding='udf-8').lower() #rb stands forread Binary, the lower case is so that the text will be guessing the text in lower case for better performance (it has les letter options)
 
+#-----------------------------------------Part1
+
+
 #NOTE: We need to change the format of the sentences to a numerical fomat so we can use the numpy library. the model canot train on sentences and let it predict the next senctences
 
 #we're selecting a pat of the text so it's easier to train on

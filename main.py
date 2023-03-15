@@ -32,3 +32,48 @@ for exp:
 
 index_to_char = dict((i,c) for i, c in enumerate(characters)) #{1 : 'a', 2 : 'b'.....}
 
+
+
+#-----------------------------------------Part2
+
+# we want to look to the last 40 characters, we don't want to use too much data
+SEQ_LENGTH = 40 
+STEP_SİZE  = 3
+#EXPLENATİON!!!!
+"""
+Hello World i love neuralNine because the videos are so great!
+if Seq length is 5
+hello world would be 1 sequal
+
+step size is the shifted character count
+lo Wo this would be the second sequal 
+
+this would continue in this way
+"""
+
+sentences= []
+next_characters = []
+
+#we give an sentence and the next character should be predicted by the model
+#"how are yo" "u"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

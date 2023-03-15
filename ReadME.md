@@ -19,6 +19,13 @@ YouTube playlist if it apeals to me and my goals.
 2-----------------------------------------
 Coding Notes:
 
+About the first part:
+Converting the sentences to numbers and vice-versa
+explenation:
+we want to convert the available characters given in the code to numbers. we do this becasue it's easier to work with the numpy library and convert the numbers back in to characters
+
+
+
 
 
 

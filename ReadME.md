@@ -1,3 +1,5 @@
+Project name: Generating Poetic Texts with Recurrent Neural Networks in Python
+
 Hello, this a fresh start to my AI coding journey. The goal of this journey is to learn about AI and learn as much as possible while doing projects from YouTube. (source down below)
 Source: https://www.youtube.com/playlist?list=PL7yh-TELLS1G9mmnBN3ZSY8hYgJ5kBOg-
 

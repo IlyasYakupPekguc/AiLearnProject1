@@ -62,7 +62,21 @@ for i in range(0,len(text) - SEQ_LENGTH, STEP_SİZE): # from the beginning of th
     next_characters.append(text[i: i+SEQ_LENGTH])  #append is to add a single item to certain collection types
 
 
+x = np.zeros(len(sentences), SEQ_LENGTH,len(characters), dtype=np.bool) #let's think about a 3d shape,for ex.: x is for sentences, y is for characters, z is for seq lngth so if in a specific koordinate a sertain character occurs we gpnna set that to true
+#the use for zeros is that the table is full of zeros , only the needed chgaracter is given true (1)
 
+y = np.zeros(len(sentences), len(characters), dtype=np.bool)
+
+#enumurate: allows you to keep track of the number of iterations (loops) in a loop
+for i, sentence in enumerate(sentences):  #running one for loop over all sentences   
+    for t, character in enumerate(sentence):
+        x[i,t,char_to_index[character]] = 1 #(1 stands for true)
+    y[i, char_to_index[next_characters[i]]] = 1
+
+"""
+we enumurate each sentences with the first for loop, after that we enumurate each character of the sentences with 
+the second for loop 
+"""
 
 
 

@@ -57,9 +57,9 @@ next_characters = []
 #we give an sentence and the next character should be predicted by the model
 #"how are yo" "u"
 
-
-
-
+for i in range(0,len(text) - SEQ_LENGTH, STEP_SİZE): # from the beginning of the text until the available last sew length with the step size of 3
+    sentences.append(text[i: i+SEQ_LENGTH]) #from i to i+seqlength
+    next_characters.append(text[i: i+SEQ_LENGTH])  #append is to add a single item to certain collection types
 
 
 

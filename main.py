@@ -3,11 +3,11 @@ import numpy as np
 import tensorflow as tf
 from tensorflow.python.keras.models import Sequential #so we can create the neural network
 from tensorflow.python.keras.layers import LSTM, Dense, Activation #this will be the memory of the model
-from tensorflow.python.keras.optimizers import rmsprop_v2 #this is to compile the model
+from tensorflow.python.keras.optimizers import rmsprop_v2 #this is to compile the model 
 
 filepath = tf.keras.utils.get_file('shakespeare.txt', 'https://storage.googleapis.com/download.tensorflow.org/data/shakespeare.txt') #getting the text to train our model
 
-text = open(filepath, 'rb').read().decode(encoding='udf-8').lower() #rb stands forread Binary, the lower case is so that the text will be guessing the text in lower case for better performance (it has les letter options)
+text = open(filepath, 'rb').read().decode(encoding='utf-8').lower() #rb stands forread Binary, the lower case is so that the text will be guessing the text in lower case for better performance (it has les letter options)
 
 #-----------------------------------------Part1
 
@@ -62,10 +62,10 @@ for i in range(0,len(text) - SEQ_LENGTH, STEP_SİZE): # from the beginning of th
     next_characters.append(text[i: i+SEQ_LENGTH])  #append is to add a single item to certain collection types
 
 
-x = np.zeros(len(sentences), SEQ_LENGTH,len(characters), dtype=np.bool) #let's think about a 3d shape,for ex.: x is for sentences, y is for characters, z is for seq lngth so if in a specific koordinate a sertain character occurs we gpnna set that to true
+x = np.zeros((len(sentences), SEQ_LENGTH,len(characters)), dtype=np.bool_) #let's think about a 3d shape,for ex.: x is for sentences, y is for characters, z is for seq lngth so if in a specific koordinate a sertain character occurs we gpnna set that to true
 #the use for zeros is that the table is full of zeros , only the needed chgaracter is given true (1)
 
-y = np.zeros(len(sentences), len(characters), dtype=np.bool)
+y = np.zeros((len(sentences), len(characters)), dtype=np.bool_)
 
 #enumurate: allows you to keep track of the number of iterations (loops) in a loop
 for i, sentence in enumerate(sentences):  #running one for loop over all sentences   
@@ -88,19 +88,10 @@ model.add(Activation('softmax')) #the softmax layer is used for probabilities fo
 when feeding the model it will always look at the given input atm and not the prev given inputs, that's why we use a memory layer (LSTM)
 """
 
-model.compile(loss = 'categorical_crossentropy', optimizer = rmsprop_v2(lr = 0.01)) #lr = learningrate
+#model.compile(loss ='categorical_crossentropy', optimizer=rmsprop_v2(lr = 0.01)) #lr = learningrate
+model.compile(loss='categorical_crossentropy', optimizer=rmsprop_v2(lr=0.01)) #lr = learningrate
 
 model.fit(x,y, batch_size = 256, epoch = 4)
 
-
-
-
-
-
-
-
-
-
-
-
+model.save('textgenerator.model')
 

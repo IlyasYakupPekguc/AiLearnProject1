@@ -36,6 +36,7 @@ for easier readability i modified the comment above the code section for easier 
 
 
 #-----------------------------------------------------------------TRAİNİNG PART
+
 model = Sequential()
 model.add(LSTM(128,input_shape =(SEQ_LENGTH, len(characters)))) #this layer is so it can remember the past given characters ----- also , means times (*)
 model.add(Dense(len(characters)))
@@ -89,6 +90,19 @@ While rersearching i learned a few things that will help me in my future project
 
 4-----------------------------------------
 <span style="background-color: #0000FF">PROJECT THOUGHTS AND TIPS:</span>
+
+Thoughts:
+
+First i think that it's a easy basic ai project to understand a bit about the topics.
+It covers basic coding, training a model and sme other stuff.
+I defenitly have to do many more projects before i start to become comfortable with doing projects on my own.
+
+Let's see what the future holds for me.
+I need to understand coding better and also the general python and AI stuff.
+
+TIPS:
+-Try to use jupiter Notebook.
+-Watch tutorials and projects at the same time to get more information about the subjects. 
 
 
 

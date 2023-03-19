@@ -99,7 +99,7 @@ model.save('textgenerator.model')
 #-----------------------------------------------------------------TRAİNİNG PART
 
 
-model = tf.keras.models.load_model('texgenerator.model') #after the training we can just load he model instead of training the model over and over again.
+model = tf.keras.models.load_model('textgenerator.model') #after the training we can just load he model instead of training the model over and over again.
 
 #this function is explained in the keras tutorial of the instructor, so what i'm gonna do is watch that video while doing another project.
 #what this function basicly is that charachter it's gonna predict is gonna have a tempurature, based on the tempirature it's gonna be experimental or not.
@@ -116,9 +116,9 @@ def sample(preds, temperature = 1.0):
 #we're coping the first 40 characters direkt from the shakespeare text, but if we want to have thee text completely generated we have to delete the first 40 characters first 
 def generate_text(length, temperature): 
     start_index = random.randint(0, len(text) - SEQ_LENGTH-1)
-    generate_text = ''
+    generated = ''
     sentence = text[start_index: start_index + SEQ_LENGTH]
-    generate_text += sentence
+    generated += sentence
     for i in range(length):
         x = np.zeros((1,SEQ_LENGTH,len(characters)))
         for t , character in enumerate(sentence):
@@ -126,12 +126,23 @@ def generate_text(length, temperature):
 
         predictions = model.predict(x, verbose = 0)[0] #some complicated stuff :(
         next_index = sample(predictions,temperature)
-        next_chararcter = index_to_char[next_index]
+        next_character = index_to_char[next_index]
 
-        generated += next_chararcter
-        sentence = sentence[1:] + next_chararcter
+        generated += next_character
+        sentence = sentence[1:] + next_character
 
     return generated
+
+print('-------0.2----------')
+print(generate_text(300,0.2))
+print('-------0.4----------')
+print(generate_text(300,0.4))
+print('-------0.6----------')
+print(generate_text(300,0.6))
+print('-------0.8----------')
+print(generate_text(300,0.8))
+print('-------1----------')
+print(generate_text(300,1))
 
 
 

@@ -6,7 +6,8 @@ Source: https://www.youtube.com/playlist?list=PL7yh-TELLS1G9mmnBN3ZSY8hYgJ5kBOg-
 Contents of the readme:
 1- How and what the goal exactly is of my journey.
 2- Notes i take while learning , and notes about the code
-3- my thoughts about the project at the end of the project and what i plan to do next 
+3- Error and problems i faced and how i fixed them
+4- My thoughts about the project at the end of the project and what i plan to do next 
 
 1-----------------------------------------
 The goal explained in details:
@@ -24,8 +25,9 @@ Converting the sentences to numbers and vice-versa
 explenation:
 we want to convert the available characters given in the code to numbers. we do this becasue it's easier to work with the numpy library and convert the numbers back in to characters
 
+3-----------------------------------------
+FİXED PROBLEMS:
 
-FİXED PROBLEM:
 i had an issue with keras and tensorflow.
 my issue:
 

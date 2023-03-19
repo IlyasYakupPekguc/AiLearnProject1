@@ -25,9 +25,24 @@ explenation:
 we want to convert the available characters given in the code to numbers. we do this becasue it's easier to work with the numpy library and convert the numbers back in to characters
 
 
+FİXED PROBLEM:
+i had an issue with keras and tensorflow.
+my issue:
 
-
-
+i wanted to use the RMSprop libray but the problem was that i could not import the RMSprop library.
+İ used the rmsprop_v2 library thinking it would be no issue.
+After completing the code until the training section i found out that i needed the RMSprop library instead the one i was using.
+After reasearching for a few houres i thought it was a version problem (i had this issue before in another project.)
+İn my research i found out this was not the problem. İ just couldn't wrap my head around why i couldn't use the RMSprop library not work.
+İ found out in my research that 
+"from tensorflow.keras.optimizers import RMSprop" was the library i needed but i just couldn't import it and i used a lower library
+"from tensorflow.python.keras.optimizers import rmsprop_v2"
+To get around this problem i used 
+"import keras as ks
+from keras.optimizers import RMSprop"
+This solved the issue. 
+Even if this is a simple issue to fix, for someone who is fairluy new to the concept it was a pretty iritating challenge.
+While rersearching i learned a few things that will help me in my future projects.
 
 
 

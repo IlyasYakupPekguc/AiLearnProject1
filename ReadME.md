@@ -24,6 +24,29 @@ About the first part:
 Converting the sentences to numbers and vice-versa
 explenation:
 we want to convert the available characters given in the code to numbers. we do this becasue it's easier to work with the numpy library and convert the numbers back in to characters
+ 
+About the code below: 
+this is the traingin code with explenation, the main class will have the none explained code.
+After we trained the model we don't have to train it over and over again so what we do is get this part out of the code (maybe use jupiter for future projects?).
+for easier readability i modified the comment above the code section for easier commenting.
+#-----------------------------------------------------------------TRAİNİNG PART
+model = Sequential()
+model.add(LSTM(128,input_shape =(SEQ_LENGTH, len(characters)))) #this layer is so it can remember the past given characters ----- also , means times (*)
+model.add(Dense(len(characters)))
+model.add(Activation('softmax')) #the softmax layer is used for probabilities for ex. the next character could be %70 a 'b' or %30 a 'n' 
+
+"""
+İMPORTANT:
+when feeding the model it will always look at the given input atm and not the prev given inputs, that's why we use a memory layer (LSTM)
+"""
+
+#model.compile(loss ='categorical_crossentropy', optimizer=rmsprop_v2(lr = 0.01)) #lr = learningrate
+model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01)) #lr = learningrate
+
+model.fit(x,y, batch_size=256, epochs=4)
+
+model.save('textgenerator.model')
+#-----------------------------------------------------------------TRAİNİNG PART
 
 3-----------------------------------------
 FİXED PROBLEMS:

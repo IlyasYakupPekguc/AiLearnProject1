@@ -97,3 +97,41 @@ model.fit(x,y, batch_size=256, epochs=4)
 model.save('textgenerator.model')
 """
 #-----------------------------------------------------------------TRAİNİNG PART
+
+
+model = tf.keras.models.load_model('texgenerator.model') #after the training we can just load he model instead of training the model over and over again.
+
+#this function is explained in the keras tutorial of the instructor, so what i'm gonna do is watch that video while doing another project.
+#what this function basicly is that charachter it's gonna predict is gonna have a tempurature, based on the tempirature it's gonna be experimental or not.
+# the higher the tempurature the more experimental the character is going to be   
+
+def sample(preds, temperature = 1.0):
+    preds = np.asarray(preds).astype('float64')
+    preds = np.log(preds) / temperature
+    exp_preds = np.exp(preds)
+    preds = exp_preds / np.sum(exp_preds)
+    probas = np.random.multinomial(1,preds ,1)
+    return np.argmax(probas)
+
+#we're coping the first 40 characters direkt from the shakespeare text, but if we want to have thee text completely generated we have to delete the first 40 characters first 
+def generate_text(length, temperature): 
+    start_index = random.randint(0, len(text) - SEQ_LENGTH-1)
+    generate_text = ''
+    sentence = text[start_index: start_index + SEQ_LENGTH]
+    generate_text += sentence
+    for i in range(length):
+        x = np.zeros((1,SEQ_LENGTH,len(characters)))
+        for t , character in enumerate(sentence):
+            x[0, t, char_to_index[character]] = 1
+
+        predictions = model.predict(x, verbose = 0)[0] #some complicated stuff :(
+        next_index = sample(predictions,temperature)
+        next_chararcter = index_to_char[next_index]
+
+        generated += next_chararcter
+        sentence = sentence[1:] + next_chararcter
+
+    return generated
+
+
+

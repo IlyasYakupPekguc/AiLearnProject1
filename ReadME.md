@@ -48,6 +48,13 @@ model.fit(x,y, batch_size=256, epochs=4)
 model.save('textgenerator.model')
 #-----------------------------------------------------------------TRAİNİNG PART
 
+<mark>NOTE:</mark>
+We don't need to use some code that we've previous used to train the model, so what i can try to use is a jupiter notbook
+instead of commenting out each part that i don't need to use anymore. That will make the code easier to understand later 
+and it won't get confusing with commenting everything out.
+
+Also try to use the HTML5 futures more ein the md folder for easier use such as markdowns etc..
+
 3-----------------------------------------
 FİXED PROBLEMS:
 

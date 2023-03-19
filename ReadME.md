@@ -9,16 +9,20 @@ Contents of the readme:
 3- Error and problems i faced and how i fixed them
 4- My thoughts about the project at the end of the project and what i plan to do next 
 
+
 1-----------------------------------------
-The goal explained in details:
+<span style="background-color: #0000FF">THE GOAL EXPLAINED IN DETAILS:</span>
+
 
 First of all i'm a second grade student at Gazi University. I want to see what ai is about and learn more about the subject. This is my official second project about ai. my first
 experience was within a compition named Teknofest. Agter gaining interest in AI i'm willing to learn more about this topic and i think the best way to do that is through projects. 
 So this is my first YouTube based project. While learning i also intend to get a fuller GitHub page. So that's a double win-win. After finishing the project i intend to continue the
 YouTube playlist if it apeals to me and my goals.
 
+
 2-----------------------------------------
-Coding Notes:
+<span style="background-color: #0000FF">CODING NOTES:</span>
+
 
 About the first part:
 Converting the sentences to numbers and vice-versa
@@ -29,6 +33,8 @@ About the code below:
 this is the traingin code with explenation, the main class will have the none explained code.
 After we trained the model we don't have to train it over and over again so what we do is get this part out of the code (maybe use jupiter for future projects?).
 for easier readability i modified the comment above the code section for easier commenting.
+
+
 #-----------------------------------------------------------------TRAİNİNG PART
 model = Sequential()
 model.add(LSTM(128,input_shape =(SEQ_LENGTH, len(characters)))) #this layer is so it can remember the past given characters ----- also , means times (*)
@@ -46,7 +52,9 @@ model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01)) #lr =
 model.fit(x,y, batch_size=256, epochs=4)
 
 model.save('textgenerator.model')
+
 #-----------------------------------------------------------------TRAİNİNG PART
+
 
 <mark>NOTE:</mark>
 We don't need to use some code that we've previous used to train the model, so what i can try to use is a jupiter notbook
@@ -55,8 +63,10 @@ and it won't get confusing with commenting everything out.
 
 Also try to use the HTML5 futures more ein the md folder for easier use such as markdowns etc..
 
+
 3-----------------------------------------
-FİXED PROBLEMS:
+<span style="background-color: #0000FF">FİXED PROBLEMS:</span>
+
 
 i had an issue with keras and tensorflow.
 my issue:
@@ -77,6 +87,8 @@ Even if this is a simple issue to fix, for someone who is fairluy new to the con
 While rersearching i learned a few things that will help me in my future projects.
 
 
+4-----------------------------------------
+<span style="background-color: #0000FF">PROJECT THOUGHTS AND TIPS:</span>
 
 
 

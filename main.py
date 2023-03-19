@@ -79,16 +79,15 @@ for i, sentence in enumerate(sentences):  #running one for loop over all sentenc
 we enumurate each sentences with the first for loop, after that we enumurate each character of the sentences with 
 the second for loop 
 """
-
-model = Sequential()
-model.add(LSTM(128,input_shape =(SEQ_LENGTH, len(characters)))) #this layer is so it can remember the past given characters ----- also , means times (*)
-model.add(Dense(len(characters)))
-model.add(Activation('softmax')) #the softmax layer is used for probabilities for ex. the next character could be %70 a 'b' or %30 a 'n' 
-
+#-----------------------------------------------------------------TRAİNİNG PART See README.md 28-49
 """
 İMPORTANT:
 when feeding the model it will always look at the given input atm and not the prev given inputs, that's why we use a memory layer (LSTM)
 """
+"""model = Sequential()
+model.add(LSTM(128,input_shape =(SEQ_LENGTH, len(characters)))) #this layer is so it can remember the past given characters ----- also , means times (*)
+model.add(Dense(len(characters)))
+model.add(Activation('softmax')) #the softmax layer is used for probabilities for ex. the next character could be %70 a 'b' or %30 a 'n' 
 
 #model.compile(loss ='categorical_crossentropy', optimizer=rmsprop_v2(lr = 0.01)) #lr = learningrate
 model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01)) #lr = learningrate
@@ -96,4 +95,5 @@ model.compile(loss='categorical_crossentropy', optimizer=RMSprop(lr=0.01)) #lr =
 model.fit(x,y, batch_size=256, epochs=4)
 
 model.save('textgenerator.model')
- 
+"""
+#-----------------------------------------------------------------TRAİNİNG PART
